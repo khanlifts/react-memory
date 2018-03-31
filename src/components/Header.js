@@ -10,4 +10,9 @@ const Header = (props) => {
   );
 }
 
+// setting default props
+Header.defaultProps = {
+  title: 'Indecision'
+};
+
 export default Header;
