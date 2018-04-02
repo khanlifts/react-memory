@@ -1,8 +1,7 @@
 import React from 'react';
 import Option from './Option';
 
-const Options = (props) => {
-  return (
+const Options = (props) => (
     <div>
       <h5>Option Component is running</h5>
 
@@ -19,7 +18,7 @@ const Options = (props) => {
       }
       <Option/>
     </div>
-  );
-}
+);
+
 
 export default Options;
