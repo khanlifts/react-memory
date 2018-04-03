@@ -10,10 +10,13 @@
     "babel-loader": "^7.1.4",
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
+    "css-loader": "^0.28.11",
     "live-server": "^1.2.0",
+    "normalize.css": "^8.0.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-modal": "^3.3.2",
+    "style-loader": "^0.20.3",
     "webpack": "^4.4.1",
     "webpack-cli": "^2.0.13",
     "webpack-dev-server": "^3.1.1"
@@ -24,6 +27,8 @@
     "dev-server": "webpack-dev-server"
   },
   "devDependencies": {
-    "babel-plugin-transform-class-properties": "^6.24.1"
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "node-sass": "^4.8.3",
+    "sass-loader": "^6.0.7"
   }
 }
