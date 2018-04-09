@@ -20,7 +20,7 @@ export default class MemoryApp extends React.Component {
   };
   render() {
     return (
-      <div>
+      <div className="app__container">
         <h2>This renders correctly</h2>
         <AddContent
           options={this.state.content}
