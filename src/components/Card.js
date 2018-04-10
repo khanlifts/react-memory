@@ -17,8 +17,8 @@ export default class Card extends React.Component {
             id="card"
             className={this.state.active ? 'flipped' : null}
             onClick={this.handleFlip}>
-            <figure className="front"><span>1</span></figure>
-            <figure className="back"><span>2</span></figure>
+            <figure className="front"><span>{this.props.count}</span></figure>
+            <figure className="back"><span>{this.props.backContent}</span></figure>
           </div>
         </section>
       </div>

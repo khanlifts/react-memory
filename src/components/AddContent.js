@@ -9,6 +9,8 @@ export default class AddContent extends React.Component {
     e.preventDefault();
     const content = e.target.elements.content.value.trim();
     const error = this.props.handleAddContent(content);
+    console.log(error);
+    console.log(content);
     this.setState(() => ({ error }));
     if (!error) {
       e.target.elements.content.value = '';

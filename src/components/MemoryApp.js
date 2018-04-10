@@ -7,26 +7,27 @@ export default class MemoryApp extends React.Component {
     content: []
   };
   handleAddContent = (content) => {
-    // if there is an empty string
-    if (!content) {
-      return 'Valid value please';
-    // if there is already the same entry. indexOf returns index of option in array
-    // - 1 indicates a new entry. all other entries already have an index
-  } else if (this.state.content.indexOf(content) > -1) {
-      return 'This option already exists.';
-    }
-    // use concat return new array with merged content of original arrays
+    // use concat to return new array with merged content of original arrays
     this.setState((prevState) => ({ content: prevState.content.concat(content) }));
+    console.log(this.state.content);
   };
   render() {
     return (
       <div className="app__container">
         <h2>This renders correctly</h2>
         <AddContent
-          options={this.state.content}
+          content={this.state.content}
           handleAddContent={this.handleAddContent}
           />
-        <Card />
+        {
+          this.state.content.map((backContent, index) => (
+            <Card
+              key={backContent}
+              backContent={backContent}
+              count={index+1}
+            />
+          ))
+        }
       </div>
     );
   }
