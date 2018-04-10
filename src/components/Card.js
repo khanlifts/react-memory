@@ -11,7 +11,6 @@ export default class Card extends React.Component {
   render() {
     return (
       <div className="col-1-of-4">
-        <p>{this.props.title}</p>
           <section className="container">
           <div
             id="card"
@@ -24,10 +23,4 @@ export default class Card extends React.Component {
       </div>
     );
   }
-};
-
-
-// setting default props
-Card.defaultProps = {
-  title: 'React Memory'
 };

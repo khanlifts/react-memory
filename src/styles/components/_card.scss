@@ -35,11 +35,11 @@
 }
 
 #card .front {
-  background: red;
+  background: $color-card-front;
 }
 
 #card .back {
-  background: blue;
+  background: $color-card-back;
   transform: rotateY( 180deg);
 }
 

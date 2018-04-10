@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from './Card';
 import AddContent from './AddContent';
+import Row from './Row';
 
 export default class MemoryApp extends React.Component {
   state = {
@@ -14,22 +15,14 @@ export default class MemoryApp extends React.Component {
   render() {
     return (
       <div className="app__container">
-        <h2>This renders correctly</h2>
-        <div className="app__row">
+        <h2>Reactive Memory</h2>
         <AddContent
           content={this.state.content}
           handleAddContent={this.handleAddContent}
           />
-        {
-          this.state.content.map((backContent, index) => (
-            <Card
-              key={backContent}
-              backContent={backContent}
-              count={index+1}
-            />
-          ))
-        }
-        </div>
+        <Row
+          content={this.state.content}
+          />
       </div>
     );
   }
