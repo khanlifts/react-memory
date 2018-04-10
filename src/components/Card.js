@@ -10,7 +10,7 @@ export default class Card extends React.Component {
   };
   render() {
     return (
-      <div className="col-1-of-4">
+      <div>
           <section className="container">
           <div
             id="card"
