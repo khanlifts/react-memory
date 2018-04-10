@@ -15,6 +15,7 @@ export default class MemoryApp extends React.Component {
     return (
       <div className="app__container">
         <h2>This renders correctly</h2>
+        <div className="app__row">
         <AddContent
           content={this.state.content}
           handleAddContent={this.handleAddContent}
@@ -28,6 +29,7 @@ export default class MemoryApp extends React.Component {
             />
           ))
         }
+        </div>
       </div>
     );
   }
