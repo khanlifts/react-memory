@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './Card';
 
-const Row = (props) => (
+const Grid = (props) => (
       <div className="app__row--grid">
       {
         props.content.map((backContent, index) => (
@@ -16,4 +16,4 @@ const Row = (props) => (
 );
 
 
-export default Row;
+export default Grid;

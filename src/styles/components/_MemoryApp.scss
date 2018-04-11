@@ -6,7 +6,7 @@
 
 .app__row--grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
-  grid-auto-rows: 25rem;
+  // grid-auto-rows: 25rem;
 }
