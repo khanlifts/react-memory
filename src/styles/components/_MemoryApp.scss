@@ -1,10 +1,11 @@
+
 .app__container {
   padding: 5rem;
   height: 100vh;
-  background: lighten($color-gray-light, 30%);
+  background: linear-gradient(to top right, rgba(14, 152, 106, 0.79), rgb(40, 66, 176));
 }
 
-.app__row--grid {
+.app__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;

@@ -5,7 +5,8 @@ import Grid from './Grid';
 
 export default class MemoryApp extends React.Component {
   state = {
-    content: []
+    content: [],
+    duplicates: []
   };
   handleAddContent = (item) => {
     // if there is an empty string
@@ -28,6 +29,16 @@ export default class MemoryApp extends React.Component {
     } else if (this.state.content.length === 0) {
       alert('Please enter items first');
     }
+  };
+  handleSameContent = (item) => {
+    if (this.state.duplicates.length < 2) {
+      this.setState((prevState) => ({ duplicates: prevState.duplicates.concat(item) }))
+    } else if (this.state.duplicates.length === 2) {
+      this.setState(() => ({ duplicates: [] }));
+      this.setState((prevState) => ({ duplicates: prevState.duplicates.concat(item) }))
+    }
+    console.log('duplicates length: ', this.state.duplicates.length);
+    console.log('duplicates: ', this.state.duplicates);
   };
   handleShuffleContent = () => {
     let shuffArray = this.state.content;
@@ -64,6 +75,7 @@ export default class MemoryApp extends React.Component {
           />
         <Grid
           content={this.state.content}
+          handleSameContent={this.handleSameContent}
           />
       </div>
     );

@@ -7,6 +7,7 @@ export default class Card extends React.Component {
   handleFlip = () => {
     const currentState = this.state.active
     this.setState(() => ({ active: !currentState }));
+    this.props.handleSameContent(this.props.backContent);
   };
   render() {
     return (
