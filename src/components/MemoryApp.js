@@ -72,7 +72,7 @@ export default class MemoryApp extends React.Component {
   render() {
     return (
       <div className="app__container">
-        <h2>Reactive Memory</h2>
+        <h1>Reactive Memory</h1>
         <Action
           content={this.state.content}
           handleAddContent={this.handleAddContent}

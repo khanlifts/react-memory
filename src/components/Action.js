@@ -20,10 +20,12 @@ export default class Action extends React.Component {
         {this.state.error && <p className="add-content-error">{this.state.error}</p>}
         <form className="add-content" onSubmit={this.handleAddContent}>
           <input className="add-content__input" type="text" name="content"/>
-          <button className="button">Add Content</button>
-          <button onClick={this.props.handleDeleteAllContent}>Remove All</button>
-          <button onClick={this.props.handleDuplicateContent}>Duplicate All</button>
-          <button onClick={this.props.handleShuffleContent}>Shuffle</button>
+          <div class="add-content__buttons">
+            <button>Add Content</button>
+            <button onClick={this.props.handleDeleteAllContent}>Remove All</button>
+            <button onClick={this.props.handleDuplicateContent}>Duplicate All</button>
+            <button onClick={this.props.handleShuffleContent}>Shuffle</button>
+          </div>
         </form>
       </div>
     );
