@@ -1,5 +1,5 @@
 .app__container {
-  background: linear-gradient(to top right, rgba(14, 152, 106, 0.79), rgb(40, 66, 176));
+  background: linear-gradient(to top right, $color-bottom-left, $color-top-right);
   height: 100%;
   padding: 5rem;
   h1 {
@@ -16,5 +16,10 @@
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: repeat(4, 1fr);
-  // grid-auto-rows: 25rem;
+}
+
+.gitHubCorner {
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import Card from './Card';
 import Action from './Action';
 import Grid from './Grid';
+import GithubCorner from 'react-github-corner';
 
 export default class MemoryApp extends React.Component {
   state = {
@@ -73,6 +74,11 @@ export default class MemoryApp extends React.Component {
     return (
       <div className="app__container">
         <h1>Reactive Memory</h1>
+        <GithubCorner
+          href="https://github.com/khanlifts/react-memory"
+          size="100"
+          className="gitHubCorner"
+          />
         <Action
           content={this.state.content}
           handleAddContent={this.handleAddContent}
