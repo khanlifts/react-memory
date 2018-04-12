@@ -20,6 +20,17 @@ export default class MemoryApp extends React.Component {
     // use concat to return new array with merged content of original arrays
     this.setState((prevState) => ({ content: prevState.content.concat(item) }));
   };
+  handleDeleteContent = (itemToRemove) => {
+    this.setState((prevState) => ({
+      content: prevState.content.filter((item) => {
+        return itemToRemove !== item;
+      })
+    }));
+    console.log(this.state.content);
+  };
+  handleDeleteAllContent = () => {
+    this.setState(() => ({ content: [] }));
+  };
   handleDuplicateContent = () => {
     if (this.state.content.length > 0) {
       const dupArray = this.state.content.reduce((res, current, index, array) => {
@@ -32,12 +43,11 @@ export default class MemoryApp extends React.Component {
   };
   handleSameContent = (item) => {
     if (this.state.duplicates.length < 2) {
-      this.setState((prevState) => ({ duplicates: prevState.duplicates.concat(item) }))
-    } else if (this.state.duplicates.length === 2) {
-      this.setState(() => ({ duplicates: [] }));
-      this.setState((prevState) => ({ duplicates: prevState.duplicates.concat(item) }))
+      this.setState((prevState) => ({ duplicates: prevState.duplicates.concat(item) }));
+      console.log('duplicates: ', this.state.duplicates);
+      return
     }
-    console.log('duplicates length: ', this.state.duplicates.length);
+    this.setState(() => ({ duplicates: [] }));
     console.log('duplicates: ', this.state.duplicates);
   };
   handleShuffleContent = () => {
@@ -59,9 +69,6 @@ export default class MemoryApp extends React.Component {
    }
     this.setState(() => ({ content: shuffArray }));
   };
-  handleDeleteAllContent = () => {
-    this.setState(() => ({ content: [] }));
-  };
   render() {
     return (
       <div className="app__container">
@@ -76,6 +83,7 @@ export default class MemoryApp extends React.Component {
         <Grid
           content={this.state.content}
           handleSameContent={this.handleSameContent}
+          handleDeleteContent={this.handleDeleteContent}
           />
       </div>
     );

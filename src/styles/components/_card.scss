@@ -47,3 +47,15 @@
 #card.flipped {
   transform: rotateY( 180deg);
 }
+
+.card__button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: $color-white;
+  background: none;
+  border: .5px solid $color-white;
+  &:hover {
+    color: $color-card-front;
+  }
+}

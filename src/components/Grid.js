@@ -10,6 +10,7 @@ const Grid = (props) => (
             backContent={backContent}
             count={index+1}
             handleSameContent={props.handleSameContent}
+            handleDeleteContent={props.handleDeleteContent}
           />
         ))
       }
