@@ -6,7 +6,7 @@ export default class Card extends React.Component {
     deleteButtonActive: false
   };
   handleFlip = () => {
-    const currentState = this.state.active
+    const currentState = this.state.flipActive
     this.setState(() => ({ flipActive: !currentState }));
     this.props.handleSameContent(this.props.backContent);
   };
