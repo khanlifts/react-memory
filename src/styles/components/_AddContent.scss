@@ -47,3 +47,9 @@
 .add-content__buttons {
   text-align: center;
 }
+
+@media (max-width: $desktop-breakpoint) {
+  input {
+    width: 10rem;
+  }
+}

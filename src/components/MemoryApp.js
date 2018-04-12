@@ -12,11 +12,11 @@ export default class MemoryApp extends React.Component {
   handleAddContent = (item) => {
     // if there is an empty string
     if (!item) {
-      return 'Enter items please';
+      return 'Bitte Inhalt hinzufügen';
     // if there is already the same option. indexOf returns index of option in array
     // - 1 indicates a new option. all other options already have an index
   } else if (this.state.content.indexOf(item) > -1) {
-      return 'This item already exists.';
+      return 'Diese Karte gibt es bereits';
     }
     // use concat to return new array with merged content of original arrays
     this.setState((prevState) => ({ content: prevState.content.concat(item) }));

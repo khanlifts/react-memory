@@ -21,10 +21,10 @@ export default class Action extends React.Component {
         <form className="add-content" onSubmit={this.handleAddContent}>
           <input className="add-content__input" type="text" name="content"/>
           <div className="add-content__buttons">
-            <button>Add Content</button>
-            <button onClick={this.props.handleDeleteAllContent}>Remove All</button>
-            <button onClick={this.props.handleDuplicateContent}>Duplicate All</button>
-            <button onClick={this.props.handleShuffleContent}>Shuffle</button>
+            <button>hinzufügen</button>
+            <button onClick={this.props.handleDeleteAllContent}>alle löschen</button>
+            <button onClick={this.props.handleDuplicateContent}>duplizieren</button>
+            <button onClick={this.props.handleShuffleContent}>mischen</button>
           </div>
         </form>
       </div>

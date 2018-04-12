@@ -1,4 +1,5 @@
 .app__container {
+  min-height: 100vh;
   background: linear-gradient(to top right, $color-bottom-left, $color-top-right);
   padding: 5rem;
   h1 {
@@ -21,4 +22,23 @@
   position: absolute;
   top: 4rem;
   right: 4rem;
+}
+
+@media (max-width: $desktop-breakpoint) {
+  .app__container {
+    padding: 2.5rem;
+    h1 {
+      color: white;
+      font-size: 3rem;
+      letter-spacing: -1px;
+      margin-bottom: 3rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+  .app__grid {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
