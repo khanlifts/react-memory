@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Grid correctly 1`] = `
+<div>
+  <div
+    className={null}
+  >
+    <section
+      className="container"
+    >
+      <div
+        className={null}
+        id="card"
+        onClick={[Function]}
+      >
+        <figure
+          className="front"
+        >
+          <span />
+        </figure>
+        <figure
+          className="back"
+        >
+          <span />
+          <button
+            className="card__button"
+            onClick={[Function]}
+          >
+            x
+          </button>
+        </figure>
+      </div>
+    </section>
+  </div>
+</div>
+`;
