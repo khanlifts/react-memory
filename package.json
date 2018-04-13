@@ -15,7 +15,6 @@
     "babel-preset-react": "6.24.1",
     "css-loader": "^0.28.11",
     "express": "^4.16.3",
-    "live-server": "^1.2.0",
     "normalize.css": "^8.0.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
@@ -23,8 +22,7 @@
     "react-modal": "^3.3.2",
     "style-loader": "^0.20.3",
     "webpack": "^4.4.1",
-    "webpack-cli": "^2.0.13",
-    "webpack-dev-server": "^3.1.1"
+    "webpack-cli": "^2.0.13"
   },
   "scripts": {
     "serve": "live-server public/",
@@ -38,7 +36,9 @@
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "live-server": "^1.2.0",
     "node-sass": "^4.8.3",
-    "sass-loader": "^6.0.7"
+    "sass-loader": "^6.0.7",
+    "webpack-dev-server": "^3.1.1"
   }
 }
