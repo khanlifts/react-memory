@@ -14,7 +14,6 @@ export default class Card extends React.Component {
     e.stopPropagation();
     const deleteBtnState = this.state.deleteButtonActive;
     this.setState(() => ({ deleteButtonActive: !deleteBtnState }));
-    console.log('handleDisappear fired');
   };
   render() {
     return (
@@ -30,7 +29,10 @@ export default class Card extends React.Component {
                 <span>{this.props.backContent}</span>
                 <button
                   className="card__button"
-                  onClick={this.handleDisappear}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    this.props.handleDeleteContent(this.props.backContent);
+                  }}
                   >x
                 </button>
               </figure>
