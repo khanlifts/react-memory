@@ -11,6 +11,7 @@
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
     "css-loader": "^0.28.11",
+    "express": "^4.16.3",
     "live-server": "^1.2.0",
     "normalize.css": "^8.0.0",
     "react": "^16.3.0",
@@ -27,7 +28,9 @@
     "build": "webpack",
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
-    "dev-server": "webpack-dev-server"
+    "dev-server": "webpack-dev-server",
+    "start": "node server/server.js",
+    "heroku-post:build": "npm run build:prod"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
