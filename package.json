@@ -30,7 +30,7 @@
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
     "start": "node server/server.js",
-    "heroku-post:build": "npm run build:prod"
+    "heroku-postbuild": "npm run build:prod"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
