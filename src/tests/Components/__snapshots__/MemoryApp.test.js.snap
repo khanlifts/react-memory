@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render component correctly 1`] = `
+<div
+  className="app__container"
+>
+  <h1>
+    Reactive Memory
+  </h1>
+  <GithubCorner
+    ariaLabel="Open GitHub project"
+    bannerColor="#151513"
+    className="gitHubCorner"
+    direction="right"
+    href="https://github.com/khanlifts/react-memory"
+    octoColor="#fff"
+    size="100"
+  />
+  <Action
+    content={Array []}
+    handleAddContent={[Function]}
+    handleDeleteAllContent={[Function]}
+    handleDuplicateContent={[Function]}
+    handleShuffleContent={[Function]}
+  />
+  <Grid
+    content={Array []}
+    handleDeleteContent={[Function]}
+    handleSameContent={[Function]}
+  />
+</div>
+`;

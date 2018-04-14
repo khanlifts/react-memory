@@ -5,9 +5,16 @@ export default class Card extends React.Component {
     flipActive: false,
     deleteButtonActive: false
   };
-  handleFlip = () => {
+  actualFlip = () => {
     const currentState = this.state.flipActive
     this.setState(() => ({ flipActive: !currentState }));
+  };
+  handleFlip = () => {
+    this.actualFlip();
+    // switch current state back after two seconds
+    setTimeout(() => {
+      this.actualFlip();
+    }, 3000);
     this.props.handleSameContent(this.props.backContent);
   };
   handleDisappear = (e) => {

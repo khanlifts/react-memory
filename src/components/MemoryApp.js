@@ -46,9 +46,9 @@ export default class MemoryApp extends React.Component {
     if (this.state.duplicates.length < 2) {
       this.setState((prevState) => ({ duplicates: prevState.duplicates.concat(item) }));
       console.log('duplicates: ', this.state.duplicates);
-      return
+      return;
     }
-    this.setState(() => ({ duplicates: [] }));
+    this.setState(() => ({ duplicates: [item] }));
     console.log('duplicates: ', this.state.duplicates);
   };
   handleShuffleContent = () => {

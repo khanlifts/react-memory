@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './Card';
 
-const Grid = (props) => (
+export const Grid = (props) => (
       <div className="app__grid">
       {
         props.content.map((backContent, index) => (
