@@ -21,6 +21,7 @@
     "react-dom": "^16.3.0",
     "react-github-corner": "^2.1.0",
     "react-modal": "^3.3.2",
+    "react-router-dom": "^4.2.2",
     "style-loader": "^0.20.3",
     "webpack": "^4.4.1",
     "webpack-cli": "^2.0.13"
