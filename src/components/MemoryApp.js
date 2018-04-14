@@ -70,6 +70,28 @@ export default class MemoryApp extends React.Component {
    }
     this.setState(() => ({ content: shuffArray }));
   };
+
+  // get local storage data
+  componentDidMount() {
+    try {
+      const json = localStorage.getItem('items');
+      const content = JSON.parse(json);
+
+      if (content) {
+        this.setState(() => ({ content }));
+      }
+    } catch (e) {
+      // if json is invalid do nothing at all
+    }
+  }
+  // store state to preserve data
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.content.length !== this.state.content.length) {
+      const json = JSON.stringify(this.state.content);
+      localStorage.setItem('items', json);
+    }
+  }
+
   render() {
     return (
       <div className="app__container">
