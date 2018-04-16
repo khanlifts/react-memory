@@ -27,7 +27,6 @@ export default class MemoryApp extends React.Component {
         return itemToRemove !== item;
       })
     }));
-    console.log(this.state.content);
   };
   handleDeleteAllContent = () => {
     this.setState(() => ({ content: [] }));
@@ -39,7 +38,7 @@ export default class MemoryApp extends React.Component {
       }, []);
       this.setState(() => ({ content: dupArray }));
     } else if (this.state.content.length === 0) {
-      alert('Please enter items first');
+      return 'Bitte Inhalt vor duplizieren hinzufügen';
     }
   };
   handleSameContent = (item) => {
