@@ -38,7 +38,7 @@ export default class MemoryApp extends React.Component {
       }, []);
       this.setState(() => ({ content: dupArray }));
     } else if (this.state.content.length === 0) {
-      return 'Bitte Inhalt vor duplizieren hinzufügen';
+      return 'Bitte Karten hinzufügen.';
     }
   };
   handleSameContent = (item) => {
@@ -51,23 +51,28 @@ export default class MemoryApp extends React.Component {
     console.log('duplicates: ', this.state.duplicates);
   };
   handleShuffleContent = () => {
-    let shuffArray = this.state.content;
-    let currentIndex = shuffArray.length;
-    let temporaryValue;
-    let randomIndex;
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
+    // only shuffle if there are 2 or more items
+    if (this.state.content.length > 1) {
+      let shuffArray = this.state.content;
+      let currentIndex = shuffArray.length;
+      let temporaryValue;
+      let randomIndex;
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
 
-     // Pick a remaining element...
-     randomIndex = Math.floor(Math.random() * currentIndex);
-     currentIndex -= 1;
+       // Pick a remaining element...
+       randomIndex = Math.floor(Math.random() * currentIndex);
+       currentIndex -= 1;
 
-     // And swap it with the current element.
-     temporaryValue = shuffArray[currentIndex];
-     shuffArray[currentIndex] = shuffArray[randomIndex];
-     shuffArray[randomIndex] = temporaryValue;
-   }
-    this.setState(() => ({ content: shuffArray }));
+       // And swap it with the current element.
+       temporaryValue = shuffArray[currentIndex];
+       shuffArray[currentIndex] = shuffArray[randomIndex];
+       shuffArray[randomIndex] = temporaryValue;
+     }
+      this.setState(() => ({ content: shuffArray }));
+    } else {
+      return 'Bitte Karte hinzufügen.'
+    }
   };
 
   // get local storage data

@@ -2,18 +2,22 @@ import React from 'react';
 
 export default class Action extends React.Component {
   state = {
-    error: undefined,
-    duplicates: undefined
+    error: undefined
+  };
+
+  // factored out setErrorState to use it 3x below
+  setErrorState = (error) => {
+    this.setState(() => ({ error }));
+    setTimeout(() => {
+      this.setState(() => ({ error: undefined }));
+    }, 3000);
   };
 
   handleAddContent = (e) => {
     e.preventDefault();
     const content = e.target.elements.content.value.trim();
     const error = this.props.handleAddContent(content);
-    this.setState(() => ({ error }));
-    setTimeout(() => {
-      this.setState(() => ({ error: undefined }));
-    }, 3000);
+    this.setErrorState(error);
     if (!error) {
       e.target.elements.content.value = '';
     }
@@ -21,10 +25,12 @@ export default class Action extends React.Component {
 
   handleDuplicateContent = () => {
     const error = this.props.handleDuplicateContent();
-    this.setState(() => ({ error }));
-    setTimeout(() => {
-      this.setState(() => ({ error: undefined }));
-    }, 2000);
+    this.setErrorState(error);
+  };
+
+  handleShuffleContent = () => {
+    const error = this.props.handleShuffleContent();
+    this.setErrorState(error);
   };
 
   render() {
@@ -37,7 +43,7 @@ export default class Action extends React.Component {
         <div className="add-content__buttons">
           <button onClick={this.props.handleDeleteAllContent}>alle löschen</button>
           <button onClick={this.handleDuplicateContent}>duplizieren</button>
-          <button onClick={this.props.handleShuffleContent}>mischen</button>
+          <button onClick={this.handleShuffleContent}>mischen</button>
         </div>
       </div>
     );
