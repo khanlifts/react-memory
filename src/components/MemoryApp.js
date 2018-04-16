@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import Card from './Card';
 import Action from './Action';
@@ -7,7 +8,8 @@ import GithubCorner from 'react-github-corner';
 export default class MemoryApp extends React.Component {
   state = {
     content: [],
-    duplicates: []
+    duplicates: [],
+    info: []
   };
   handleAddContent = (item) => {
     // if there is an empty string
@@ -75,8 +77,9 @@ export default class MemoryApp extends React.Component {
     }
   };
 
-  // get local storage data
+
   componentDidMount() {
+    // get local storage data
     try {
       const json = localStorage.getItem('items');
       const content = JSON.parse(json);
@@ -87,6 +90,17 @@ export default class MemoryApp extends React.Component {
     } catch (e) {
       // if json is invalid do nothing at all
     }
+
+    axios({
+    method:'get',
+    url:'https://credentials-api.herokuapp.com/credentials'
+    })
+    .then((res) => {
+      const name = res.data.credentials[1].name;
+      const email = res.data.credentials[1].email;
+      const text = res.data.credentials[1].text;
+      this.setState(() => ({ info: {name, email, text}}));
+    });
   }
   // store state to preserve data
   componentDidUpdate(prevProps, prevState) {
@@ -117,6 +131,9 @@ export default class MemoryApp extends React.Component {
           handleSameContent={this.handleSameContent}
           handleDeleteContent={this.handleDeleteContent}
           />
+          <p>{this.state.info.name}</p>
+          <p>{this.state.info.email}</p>
+          <p>{this.state.info.text}</p>
       </div>
     );
   }
