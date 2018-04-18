@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React from 'react';
-import Card from './Card';
+import About from './About';
 import Action from './Action';
+import Card from './Card';
 import Grid from './Grid';
 import GithubCorner from 'react-github-corner';
 
@@ -119,6 +120,11 @@ export default class MemoryApp extends React.Component {
           size="100"
           className="gitHubCorner"
           />
+        <About
+          name={this.state.info.name}
+          email={this.state.info.email}
+          text={this.state.info.text}
+          />
         <Action
           content={this.state.content}
           handleAddContent={this.handleAddContent}
@@ -131,9 +137,6 @@ export default class MemoryApp extends React.Component {
           handleSameContent={this.handleSameContent}
           handleDeleteContent={this.handleDeleteContent}
           />
-          <p>{this.state.info.name}</p>
-          <p>{this.state.info.email}</p>
-          <p>{this.state.info.text}</p>
       </div>
     );
   }

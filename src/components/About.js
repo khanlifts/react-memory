@@ -1,7 +1,11 @@
 import React from 'react';
 
-const HelpPage = () => (
-  <div>
-    <p>This is the Help Page</p>
+const About = (props) => (
+  <div className="about">
+    <p>Hi this is {props.name}</p>
+    <p>{props.text}</p>
+    <p>My email is: {props.email}</p>
   </div>
 );
+
+export default About;
